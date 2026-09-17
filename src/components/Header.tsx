@@ -28,12 +28,6 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link
-          href="/squash"
-          className="hidden rounded-none border border-magenta px-4 py-2 text-xs font-semibold uppercase tracking-widest text-magenta transition-colors hover:bg-magenta hover:text-ink sm:inline-block"
-        >
-          Découvrir 5D Squash
-        </Link>
       </div>
       <nav
         aria-label="Navigation mobile"

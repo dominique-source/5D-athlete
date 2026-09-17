@@ -1,39 +1,54 @@
-import { DimensionOrbit } from "@/components/home/DimensionOrbit";
+import Image from "next/image";
 import { SportCard } from "@/components/home/SportCard";
 import { assets } from "@/config/assets";
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-off-white/10 px-4 py-16 sm:px-6 sm:py-24">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 lg:flex-row lg:gap-16">
-          <div className="animate-fade-up order-2 max-w-xl text-center lg:order-1 lg:text-left">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-off-white/60">
-              5D Athlete
-            </p>
-            <h1 className="mt-3 text-5xl sm:text-6xl lg:text-7xl">
-              5D <span className="text-magenta">Athlete</span>
-            </h1>
-            <p className="font-display mt-2 text-lg text-off-white/70 italic uppercase tracking-widest">
-              By Dominique Soucy
-            </p>
-            <p className="mt-6 text-lg font-semibold tracking-wide text-off-white/90 uppercase">
-              Build the complete athlete.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-off-white/70 sm:text-base">
-              Cinq dimensions, un seul athlète : Skills, Decision Making,
-              Community, Mind et Soul. 5D Athlete construit des expériences
-              sportives qui développent la personne complète — pas juste la
-              performance.
-            </p>
-          </div>
-          <div className="order-1 w-full max-w-md lg:order-2">
-            <DimensionOrbit />
+      {/* Visually hidden — the "5D Athlete" title is already baked into the
+          hero image, this exists for accessibility/SEO only. */}
+      <h1 className="sr-only">5D Athlete</h1>
+
+      <section className="relative w-full bg-ink">
+        {/* Height is capped at calc(100vh - header - ~90px peek) on desktop,
+            but never allowed to exceed width * (941/1672) — otherwise a
+            narrower-but-tall viewport would force object-cover to crop the
+            sides instead of top/bottom, cutting into the "5D ATHLETE" title
+            or the right-side scenes. */}
+        <div className="relative aspect-[1672/941] w-full lg:aspect-auto lg:h-[min(calc(100vh-155px),calc(100vw*941/1672))] lg:min-h-[440px]">
+          <Image
+            src={assets.homeHero}
+            alt="5D Athlete — un athlète s'élance pour un coup de squash, entouré de scènes de 5D Échecs et de 5D PürInstinct, avec le titre 5D Athlete"
+            fill
+            priority
+            fetchPriority="high"
+            sizes="100vw"
+            className="object-contain lg:object-cover"
+          />
+
+          <div className="pointer-events-none absolute inset-x-0 bottom-3 flex justify-center sm:bottom-4">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-ink/70 px-3 py-1.5 text-[11px] font-medium tracking-wide text-off-white/80 uppercase backdrop-blur-sm">
+              Explore les 3 sports
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                className="size-3"
+                fill="none"
+              >
+                <path
+                  d="M4 6l4 4 4-4"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+      <section className="mx-auto max-w-6xl px-4 pt-8 pb-16 sm:px-6 sm:pt-10 sm:pb-20">
         <div className="mb-10 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-magenta">
             Nos plateformes

@@ -4,8 +4,13 @@
  */
 const basePath = "/assets/5d";
 
+// Natural dimensions of homeHero — the title "5D ATHLETE" is baked into the
+// image, so this ratio must stay intact wherever the image is displayed.
+export const HOME_HERO_WIDTH = 1672;
+export const HOME_HERO_HEIGHT = 941;
+
 export const assets = {
-  homeHero: `${basePath}/home/hero-5d.webp`,
+  homeHero: `${basePath}/home/5d-athlete-homepage.png`,
   sportCards: {
     chess: `${basePath}/sports/chess-card.webp`,
     purinstinct: `${basePath}/sports/purinstinct-card.webp`,
