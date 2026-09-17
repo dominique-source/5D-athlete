@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #050607;
+  --color-charcoal: #111418;
+  --color-off-white: #f4f0e8;
+  --color-magenta: #ff135d;
+  --color-blue: #2e8cff;
+  --color-burgundy: #6e1f32;
+  --color-copper: #c97854;
+  --color-amber: #d99a54;
+
+  --image-overlay: linear-gradient(
+    90deg,
+    rgba(5, 6, 7, 0.92) 0%,
+    rgba(5, 6, 7, 0.38) 45%,
+    rgba(5, 6, 7, 0.05) 100%
+  );
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-charcoal: var(--color-charcoal);
+  --color-off-white: var(--color-off-white);
+  --color-magenta: var(--color-magenta);
+  --color-blue: var(--color-blue);
+  --color-burgundy: var(--color-burgundy);
+  --color-copper: var(--color-copper);
+  --color-amber: var(--color-amber);
+
+  --font-display: var(--font-anton), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+@layer base {
+  html {
+    background: var(--color-ink);
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--color-ink);
+    color: var(--color-off-white);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-style: italic;
+  }
+
+  .font-tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-magenta);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-magenta);
+    color: var(--color-off-white);
+  }
+}
+
+@keyframes pulse-line {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes orbit-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-orbit-in {
+  animation: orbit-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-pulse-line {
+  animation: pulse-line 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

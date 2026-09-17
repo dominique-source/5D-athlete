@@ -1,0 +1,29 @@
+{
+  "basePath": "/assets/5d",
+  "assets": {
+    "homeHero": "home/hero-5d.webp",
+    "sportCards": {
+      "chess": "sports/chess-card.webp",
+      "purinstinct": "sports/purinstinct-card.webp",
+      "squash": "sports/squash-card.webp"
+    },
+    "squashPlatformHero": "squash/platform-hero.webp",
+    "elite": {
+      "hero": "elite/hero.webp",
+      "arrival": "elite/community-arrival.webp",
+      "afterplay": "elite/afterplay-meal-dj.webp"
+    },
+    "school": {
+      "hero": "school/hero.webp",
+      "stations": "school/skill-stations.webp",
+      "team": "school/team-challenge.webp"
+    },
+    "corpo": {
+      "hero": "corpo/hero.webp",
+      "challenge": "corpo/team-challenge.webp",
+      "reception": "corpo/reception.webp"
+    },
+    "icons": "icons/5d-icons.svg",
+    "mark": "icons/5d-mark.svg"
+  }
+}

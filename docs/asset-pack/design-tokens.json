@@ -1,0 +1,17 @@
+{
+  "colors": {
+    "ink": "#050607",
+    "charcoal": "#111418",
+    "offWhite": "#F4F0E8",
+    "magenta": "#FF135D",
+    "blue": "#2E8CFF",
+    "burgundy": "#6E1F32",
+    "copper": "#C97854",
+    "amber": "#D99A54"
+  },
+  "imageTreatment": {
+    "overlay": "linear-gradient(90deg, rgba(5,6,7,.92) 0%, rgba(5,6,7,.38) 45%, rgba(5,6,7,.05) 100%)",
+    "radius": "0px",
+    "grainOpacity": 0.08
+  }
+}
